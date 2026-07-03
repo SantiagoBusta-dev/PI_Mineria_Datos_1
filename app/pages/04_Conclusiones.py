@@ -1,0 +1,34 @@
+import streamlit as st
+
+st.set_page_config(page_title="Conclusiones", layout="wide")
+
+st.title("🏁 Conclusiones, Limitaciones y Próximos Pasos")
+st.markdown("---")
+
+st.markdown("### 📌 Hallazgos Principales")
+st.write(
+    "El proyecto demostró con éxito la capacidad de transformar datos altamente ruidosos en estructuras "
+    "de valor comercial. La combinación de PCA aisló eficientemente perfiles de usuarios diferenciados. "
+    "Especialmente valioso resulta identificar al grupo de usuarios con volumen de reclamos crítico, permitiendo a la empresa "
+    "diseñar estrategias de contención oportunas antes de que deriven en bajas de suscripción."
+)
+
+st.markdown("---")
+
+col_c1, col_c2 = st.columns(2)
+
+with col_c1:
+    st.markdown("### ⚠️ Limitaciones Identificadas")
+    st.warning("""
+    El alcance de las conclusiones se encuentra condicionado por la información disponible y por las decisiones "
+    "documentadas durante el proceso. En particular, al no contar con variables temporales longitudinales "
+    "o historial de facturación de meses previos, el análisis de comportamiento queda restringido a una captura estática de uso mensual.
+    """)
+
+with col_c2:
+    st.markdown("### 🚀 Próximos Pasos y Mejoras Futuras")
+    st.success("""
+    Una mejora futura podría consistir en incorporar información adicional que permita ampliar el alcance del análisis. "
+    Se sugeriría integrar registros de errores específicos de la interfaz web para cruzar las fallas técnicas "
+    con los reclamos presentados por los usuarios.
+    """)

@@ -1,0 +1,7 @@
+Paso,Descripción,Filas,Nulos,Retención (%)
+0,Estado Inicial del Dataset (Raw),8160,753,100.0
+1,Imputación de nulos (Mediana en watch_time y Moda en favorite_genre),8160,320,100.0
+2,Eliminación de registros con fechas inválidas o nulas en last_login_date,7776,0,95.29
+3,Eliminación de registros completamente duplicados,7645,0,93.69
+4,"Normalización de texto y unificación de categorías (Suscripción, País, Género)",7645,0,93.69
+5,"Filtro de valores incoherentes (Edades, tiempos y tickets fuera de rango)",7409,0,90.8
