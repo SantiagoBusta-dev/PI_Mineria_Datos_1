@@ -18,4 +18,6 @@ El análisis se centró en identificar correlaciones y distribuciones de las var
 
 Reducción de dimensionalidad:
 
-Para mejorar la eficiencia y eliminar redundancias, se aplicó la técnica de PCA (Análisis de Componentes Principales) en el notebook [04_pca.ipynb](). Esto facilitó la interpretación visual de los grupos de usuarios manteniendo la varianza significativa.
+Para mejorar la eficiencia y eliminar redundancias, se aplicó la técnica de PCA (Análisis de Componentes Principales) en el notebook [04_pca.ipynb](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/notebooks/04_pca.ipynb). Esto facilitó la interpretación visual de los grupos de usuarios manteniendo la varianza significativa.
+
+
