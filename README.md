@@ -14,7 +14,7 @@ Este proyecto usa el archivo [streaming_user_dirty.json](https://github.com/Sant
 
 Estructura del repositorio:
 
-/app: Código fuente de la aplicación desarrollada con Streamlit.
+[/app](app): Código fuente de la aplicación desarrollada con Streamlit.
 /data: Contiene los datasets en formato crudo y procesado.
 /logs: Archivo de registro del proceso ETL.
 /notebooks: Cuadernos de Jupyter con el desarrollo del análisis.
