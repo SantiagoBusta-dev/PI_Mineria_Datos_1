@@ -14,4 +14,8 @@ Este proyecto usa el archivo [streaming_user_dirty.json](https://github.com/Sant
 
 Resumen del análisis exploratorio:
 
-El análisis se centró en identificar correlaciones y distribuciones de las variables principales, detectando patrones de consumo mediante visualizaciones univariado, bivariadas y multivariado. Todos los detalles, incluyendo histogramas y diagramas de dispersión, se encuentran en el notebook [03_eda.ipynb]().
+El análisis se centró en identificar correlaciones y distribuciones de las variables principales, detectando patrones de consumo mediante visualizaciones univariado, bivariadas y multivariado. Todos los detalles, incluyendo histogramas y diagramas de dispersión, se encuentran en el notebook [03_eda.ipynb](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/notebooks/03_eda.ipynb).
+
+Reducción de dimensionalidad:
+
+Para mejorar la eficiencia y eliminar redundancias, se aplicó la técnica de PCA (Análisis de Componentes Principales) en el notebook [04_pca.ipynb](). Esto facilitó la interpretación visual de los grupos de usuarios manteniendo la varianza significativa.
