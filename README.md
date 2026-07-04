@@ -15,7 +15,7 @@ Este proyecto usa el archivo [streaming_user_dirty.json](https://github.com/Sant
 Preparación y calidad de datos:
 
 El proceso de limpieza fue fundamental para asegurar la integridad de la información. Se realizaron las siguientes acciones técnicas:Eliminación de valores nulos, tratamiento de valores atípicos y corrección de tipos de datos,normalización de variables clave para el modelado.
-La trazabilidad de estas transformaciones quedó documentada en el archivo de [logs](). La validación final se encuentra en el notebook [02_calidad_y_limpieza.ipynb]().
+La trazabilidad de estas transformaciones quedó documentada en el archivo de [logs](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/logs/pipeline_log.csv). La validación final se encuentra en el notebook [02_calidad_y_limpieza.ipynb](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/notebooks/02_calidad_y_limpieza.ipynb).
 
 Resumen del análisis exploratorio:
 
@@ -25,4 +25,6 @@ Reducción de dimensionalidad:
 
 Para mejorar la eficiencia y eliminar redundancias, se aplicó la técnica de PCA (Análisis de Componentes Principales) en el notebook [04_pca.ipynb](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/notebooks/04_pca.ipynb). Esto facilitó la interpretación visual de los grupos de usuarios manteniendo la varianza significativa.
 
+Visualización interactiva:
 
+La aplicación web permite interactuar con los resultados procesados de forma intuitiva: [Enlace a la aplicación](https://pimineriadatos1-kjpk4kvynnmh4hmnjdqcis.streamlit.app/).
