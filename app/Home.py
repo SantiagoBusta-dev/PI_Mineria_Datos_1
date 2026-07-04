@@ -18,9 +18,9 @@ with col1:
     )
     
 with col2:
-    st.markdown("### 👤 Datos del Alumno")
+    st.markdown("### 👤 Datos de Alumnos")
     st.info("""
-    * **Alumno:** Santiago Bustamante
+    * **Alumnos:** Santiago Bustamante, Roque Acosta
     """)
 
 st.markdown("---")
