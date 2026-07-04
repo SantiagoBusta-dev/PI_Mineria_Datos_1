@@ -12,6 +12,13 @@ Dataset:
 
 Este proyecto usa el archivo [streaming_user_dirty.json](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/data/raw/streaming_users_dirty.json) el cual incluye variables fundamentales sobre el comportamiento de los usuarios que son el tiempo de reproducción, el tipo de suscripción, etc. EL dataset original cuenta con muchos registros y se puede ver la inspección en [01_inspección_inicial.ipynb](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/notebooks/01_inspeccion_inicial.ipynb), los cuales fueron procesados para la limpieza, La versión final con todo el análisis está en [streaming_dataset_limpio.csv](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/data/processed/streaming_dataset_limpio.csv).
 
+Estructura del repositorio:
+
+[/app](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/tree/main/app): Código fuente de la aplicación desarrollada con Streamlit.
+[/data](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/tree/main/data): Contiene los datasets en formato crudo y procesado.
+[/logs](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/tree/main/logs): Archivo de registro del proceso ETL.
+[/notebooks](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/tree/main/notebooks): Cuadernos de Jupyter con el desarrollo del análisis.
+
 Preparación y calidad de datos:
 
 El proceso de limpieza fue fundamental para asegurar la integridad de la información. Se realizaron las siguientes acciones técnicas:Eliminación de valores nulos, tratamiento de valores atípicos y corrección de tipos de datos,normalización de variables clave para el modelado.
@@ -36,6 +43,6 @@ Cómo ejecutar localmente:
 2-Instalar dependencias: pip install -r [requirements.txt](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/requirements.txt)
 3-Ejecutar la app: streamlit run [app/Home.py](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/app/Home.py)
 
-[Conclusiones](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/notebooks/05_conclusiones.ipynb):
+Conclusiones:
 
-El proyecto permitió transformar datos brutos en información estratégica, optimizando la interpretación mediante técnicas de minería y reducción de dimensionalidad. Los resultados proporcionan una base sólida para el análisis del comportamiento de usuarios, cumpliendo con los objetivos propuestos.
+El proyecto permitió transformar datos brutos en información estratégica, optimizando la interpretación mediante técnicas de minería y reducción de dimensionalidad. Los resultados proporcionan una base sólida para el análisis del comportamiento de usuarios, cumpliendo con los objetivos propuestos. Todo se puede ver en [05_conclusiones.ipynb](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/notebooks/05_conclusiones.ipynb)
