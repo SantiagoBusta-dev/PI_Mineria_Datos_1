@@ -34,7 +34,7 @@ Cómo ejecutar localmente:
 
 1-Clonar este repositorio: git clone [https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1)
 2-Instalar dependencias: pip install -r [requirements.txt](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/requirements.txt)
-3-Ejecutar la app: streamlit run app/Home.py
+3-Ejecutar la app: streamlit run [app/Home.py](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/app/Home.py)
 
 [Conclusiones](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/notebooks/05_conclusiones.ipynb):
 
