@@ -29,6 +29,13 @@ Visualización interactiva:
 
 La aplicación web permite interactuar con los resultados procesados de forma intuitiva: [Enlace a la aplicación](https://pimineriadatos1-kjpk4kvynnmh4hmnjdqcis.streamlit.app/).
 
+
+Cómo ejecutar localmente:
+
+1-Clonar este repositorio: git clone [https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1)
+2-Instalar dependencias: pip install -r requirements.txt
+3-Ejecutar la app: streamlit run app/Home.py
+
 [Conclusiones](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/notebooks/05_conclusiones.ipynb):
 
 El proyecto permitió transformar datos brutos en información estratégica, optimizando la interpretación mediante técnicas de minería y reducción de dimensionalidad. Los resultados proporcionan una base sólida para el análisis del comportamiento de usuarios, cumpliendo con los objetivos propuestos.
