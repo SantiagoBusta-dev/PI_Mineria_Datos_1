@@ -28,3 +28,7 @@ Para mejorar la eficiencia y eliminar redundancias, se aplicó la técnica de PC
 Visualización interactiva:
 
 La aplicación web permite interactuar con los resultados procesados de forma intuitiva: [Enlace a la aplicación](https://pimineriadatos1-kjpk4kvynnmh4hmnjdqcis.streamlit.app/).
+
+Conclusiones:
+
+Las [conclusiones]() del proyecto permitió transformar datos brutos en información estratégica, optimizando la interpretación mediante técnicas de minería y reducción de dimensionalidad. Los resultados proporcionan una base sólida para el análisis del comportamiento de usuarios, cumpliendo con los objetivos propuestos.
