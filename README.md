@@ -14,10 +14,35 @@ Este proyecto usa el archivo [streaming_user_dirty.json](https://github.com/Sant
 
 Estructura del repositorio:
 
-[/app](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/tree/main/app): Código fuente de la aplicación desarrollada con Streamlit.
-[/data](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/tree/main/data): Contiene los datasets en formato crudo y procesado.
-[/logs](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/tree/main/logs): Archivo de registro del proceso ETL.
-[/notebooks](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/tree/main/notebooks): Cuadernos de Jupyter con el desarrollo del análisis.
+PI_Mineria_Datos_1/
+│
+├── app/
+│   ├── Home.py
+│   └── pages/
+│       ├── 01_Dataset.py
+│       ├── 02_EDA.py
+│       ├── 03_PCA.py
+│       └── 04_Conclusiones.py
+│
+├── data/
+│   ├── raw/
+│   └── processed/
+│       └── dataset_final.csv
+│
+├── logs/
+│       └── pipeline_log.csv
+│
+├── notebooks/
+│   ├── 01_RA_Inspeccion_Inicial.ipynb
+│   ├── 02_RA_Calidad_y_Limpieza.ipynb
+│   ├── 03_RA_EDA.ipynb
+│   ├── 04_RA_PCA.ipynb
+│   └── 05_RA_Conclusiones.ipynb
+│
+├── reports/
+│
+├── README.md
+└── requirements.txt
 
 Preparación y calidad de datos:
 
