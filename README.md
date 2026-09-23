@@ -48,8 +48,8 @@ El dataset original fue inspeccionado y posteriormente procesado durante las dis
 
 ### 📄 Archivos principales
 
-* [Dataset original — `streaming_users_dirty.json`](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/data/raw/streaming_users_dirty.json)
-* [Dataset procesado — `streaming_dataset_limpio.csv`](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/data/processed/streaming_dataset_limpio.csv)
+* 📥 [Dataset original — `streaming_users_dirty.json`](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/data/raw/streaming_users_dirty.json)
+* 📊 [Dataset procesado — `streaming_dataset_limpio.csv`](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/data/processed/streaming_dataset_limpio.csv)
 
 ---
 
@@ -114,9 +114,22 @@ El objetivo fue reducir la cantidad de variables utilizadas en el análisis, con
 
 Como parte del proyecto se desarrolló una aplicación web utilizando **Streamlit**, que permite explorar de manera interactiva los datos y los resultados obtenidos durante el análisis.
 
-La aplicación incluye diferentes secciones para consultar el dataset, explorar el análisis exploratorio, visualizar el análisis PCA y consultar las conclusiones.
+La aplicación está organizada en diferentes secciones:
+
+* 📊 **Dataset**
+* 📈 **EDA**
+* 🔎 **PCA**
+* 📝 **Conclusiones**
 
 ### 🚀 [Abrir aplicación interactiva](https://pimineriadatos1-kjpk4kvynnmh4hmnjdqcis.streamlit.app/)
+
+### 📂 Archivos de la aplicación
+
+* 🏠 [`Home.py`](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/app/Home.py)
+* 📊 [`01_Dataset.py`](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/app/pages/01_Dataset.py)
+* 📈 [`02_EDA.py`](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/app/pages/02_EDA.py)
+* 🔎 [`03_PCA.py`](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/app/pages/03_PCA.py)
+* 📝 [`04_Conclusiones.py`](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/app/pages/04_Conclusiones.py)
 
 ---
 
@@ -169,6 +182,7 @@ PI_Mineria_Datos_1/
 │   └── 05_conclusiones.ipynb
 │
 ├── reports/
+│   └── informe_final.pdf
 │
 ├── README.md
 └── requirements.txt
@@ -178,13 +192,21 @@ PI_Mineria_Datos_1/
 
 ## 📓 Etapas del análisis
 
-| Etapa | Notebook                                                                                                                                 | Descripción                     |
+| Etapa | Archivo                                                                                                                                  | Descripción                     |
 | ----- | ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
 | 1️⃣   | [`01_inspeccion_inicial.ipynb`](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/notebooks/01_inspeccion_inicial.ipynb) | Inspección inicial del dataset  |
 | 2️⃣   | [`02_calidad_y_limpieza.ipynb`](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/notebooks/02_calidad_y_limpieza.ipynb) | Limpieza y preparación de datos |
 | 3️⃣   | [`03_eda.ipynb`](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/notebooks/03_eda.ipynb)                               | Análisis exploratorio de datos  |
 | 4️⃣   | [`04_pca.ipynb`](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/notebooks/04_pca.ipynb)                               | Reducción de dimensionalidad    |
 | 5️⃣   | [`05_conclusiones.ipynb`](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/notebooks/05_conclusiones.ipynb)             | Interpretación y conclusiones   |
+
+---
+
+## 📄 Informe final
+
+El proyecto cuenta también con un informe final en formato PDF.
+
+📑 **[Ver `informe_final.pdf`](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/reports/informe_final.pdf)**
 
 ---
 
@@ -216,7 +238,7 @@ pip install -r requirements.txt
 streamlit run app/Home.py
 ```
 
-También podés consultar el archivo [`requirements.txt`](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/requirements.txt) para conocer las dependencias utilizadas.
+📦 **[Ver `requirements.txt`](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/requirements.txt)**
 
 ---
 
