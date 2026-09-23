@@ -20,7 +20,7 @@ with col1:
 with col2:
     st.markdown("### 👤 Datos")
     st.info("""
-    * **Alumnos:** Santiago Bustamante""")
+    * **Alumno:** Santiago Bustamante""")
 
 st.markdown("---")
 st.markdown("### 🗂️ Estructura del Menú Lateral")
