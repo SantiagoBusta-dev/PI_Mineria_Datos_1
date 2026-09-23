@@ -18,10 +18,9 @@ with col1:
     )
     
 with col2:
-    st.markdown("### 👤 Datos de Alumnos")
+    st.markdown("### 👤 Datos")
     st.info("""
-    * **Alumnos:** Santiago Bustamante, Roque Acosta
-    """)
+    * **Alumnos:** Santiago Bustamante""")
 
 st.markdown("---")
 st.markdown("### 🗂️ Estructura del Menú Lateral")
