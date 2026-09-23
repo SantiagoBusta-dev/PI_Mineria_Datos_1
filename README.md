@@ -1,19 +1,142 @@
-Proyecto Integrador de Minería de Datos 1
+# 📊 Proyecto Integrador — Minería de Datos 1
 
-Información general:
+## 📌 Descripción
 
-Este repositorio contiene la entrega final del Proyecto Integrador de la materia Minería de Datos 1. El trabajo abarca el ciclo completo de procesamiento de datos, desde los archivos brutos hasta la implementación de una aplicación web interactiva para la visualización de los resultados.
+Proyecto desarrollado individualmente como parte de la materia **Minería de Datos 1**.
 
-Objetivo:
+El proyecto aborda un proceso completo de análisis y procesamiento de datos, desde la inspección y limpieza de un dataset hasta el análisis exploratorio, la reducción de dimensionalidad mediante PCA y la presentación de resultados mediante una aplicación web interactiva desarrollada con **Streamlit**.
 
-El objetivo principal de este proyecto es analizar y procesar el dataset de [streaming_users_dirty](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/data/raw/streaming_users_dirty.json). Buscando identificar patrones claves en los comportamientos de los usuarios, reducir la complejidad y exponer los hallazgos mediante una interfaz interactiva, facilitando la toma de decisiones mediante evidencia, transformando los datos crudos en información útil.
+El objetivo es transformar datos sin procesar en información útil para identificar patrones y comprender el comportamiento de los usuarios de servicios de streaming.
 
-Dataset:
+---
 
-Este proyecto usa el archivo [streaming_user_dirty.json](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/data/raw/streaming_users_dirty.json) el cual incluye variables fundamentales sobre el comportamiento de los usuarios que son el tiempo de reproducción, el tipo de suscripción, etc. EL dataset original cuenta con muchos registros y se puede ver la inspección en [01_inspección_inicial.ipynb](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/notebooks/01_inspeccion_inicial.ipynb), los cuales fueron procesados para la limpieza, La versión final con todo el análisis está en [streaming_dataset_limpio.csv](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/data/processed/streaming_dataset_limpio.csv).
+## 🎯 Objetivo
 
-Estructura del repositorio:
+Analizar el dataset `streaming_users_dirty` para identificar patrones en el comportamiento de los usuarios, procesar y mejorar la calidad de los datos, reducir la dimensionalidad de las variables y presentar los principales resultados mediante visualizaciones y una aplicación interactiva.
 
+El proyecto sigue distintas etapas del proceso de minería de datos:
+
+**Datos brutos → Inspección → Limpieza → EDA → PCA → Conclusiones → Aplicación interactiva**
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+* **Python**
+* **Pandas**
+* **NumPy**
+* **Matplotlib**
+* **Seaborn**
+* **Scikit-learn**
+* **Jupyter Notebook**
+* **Streamlit**
+* **Git / GitHub**
+
+---
+
+## 📂 Dataset
+
+El proyecto utiliza el dataset [`streaming_users_dirty.json`](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/data/raw/streaming_users_dirty.json), que contiene información relacionada con el comportamiento de usuarios de servicios de streaming.
+
+Entre las variables analizadas se encuentran características relacionadas con el consumo de contenido y el tipo de suscripción.
+
+El dataset original fue inspeccionado y posteriormente procesado durante las distintas etapas del proyecto.
+
+📄 **Dataset original:**
+[`streaming_users_dirty.json`](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/data/raw/streaming_users_dirty.json)
+
+📄 **Dataset procesado:**
+[`streaming_dataset_limpio.csv`](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/data/processed/streaming_dataset_limpio.csv)
+
+---
+
+## 🧹 Preparación y calidad de los datos
+
+La preparación de los datos fue una etapa fundamental del proyecto.
+
+Durante este proceso se realizaron tareas como:
+
+* Inspección inicial del dataset.
+* Identificación y tratamiento de valores faltantes.
+* Detección y tratamiento de valores atípicos.
+* Corrección de tipos de datos.
+* Limpieza y transformación de variables.
+* Normalización de variables necesarias para el análisis.
+* Validación del dataset procesado.
+
+La trazabilidad de las transformaciones realizadas quedó registrada en el archivo de logs.
+
+📋 **Log del proceso:**
+[`pipeline_log.csv`](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/logs/pipeline_log.csv)
+
+📓 **Notebook de inspección:**
+[`01_RA_Inspeccion_Inicial.ipynb`](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/notebooks/01_RA_Inspeccion_Inicial.ipynb)
+
+📓 **Notebook de calidad y limpieza:**
+[`02_RA_Calidad_y_Limpieza.ipynb`](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/notebooks/02_RA_Calidad_y_Limpieza.ipynb)
+
+---
+
+## 📈 Análisis exploratorio de datos (EDA)
+
+Se realizó un análisis exploratorio para estudiar la distribución de las variables y detectar posibles relaciones y patrones presentes en los datos.
+
+Se utilizaron diferentes técnicas de visualización, incluyendo:
+
+* Análisis univariado.
+* Análisis bivariado.
+* Análisis multivariado.
+* Histogramas.
+* Diagramas de dispersión.
+* Análisis de correlaciones.
+
+📓 **Notebook de EDA:**
+[`03_RA_EDA.ipynb`](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/notebooks/03_RA_EDA.ipynb)
+
+---
+
+## 🔎 Reducción de dimensionalidad — PCA
+
+Se aplicó **PCA (Principal Component Analysis)** como técnica de reducción de dimensionalidad.
+
+El objetivo fue reducir la cantidad de variables utilizadas en el análisis, conservando la mayor cantidad posible de información relevante y facilitando la interpretación visual de los datos.
+
+📓 **Notebook de PCA:**
+[`04_RA_PCA.ipynb`](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/notebooks/04_RA_PCA.ipynb)
+
+---
+
+## 🌐 Aplicación interactiva
+
+Como parte del proyecto se desarrolló una aplicación web utilizando **Streamlit**, que permite explorar de manera interactiva los datos y los resultados obtenidos durante el análisis.
+
+🚀 **[Ver aplicación interactiva](https://pimineriadatos1-kjpk4kvynnmh4hmnjdqcis.streamlit.app/)**
+
+La aplicación incluye diferentes secciones para consultar el dataset, explorar los resultados del EDA, visualizar el análisis PCA y consultar las conclusiones.
+
+---
+
+## 👨‍💻 Desarrollo del proyecto
+
+El desarrollo del proyecto fue realizado **individualmente por mí**, incluyendo las diferentes etapas de procesamiento, análisis y presentación de los resultados.
+
+Entre las principales tareas realizadas se encuentran:
+
+* Inspección y comprensión inicial de los datos.
+* Limpieza y transformación del dataset.
+* Análisis exploratorio de datos.
+* Creación de visualizaciones.
+* Aplicación de PCA.
+* Interpretación de resultados.
+* Organización de notebooks y archivos del proyecto.
+* Desarrollo de la aplicación interactiva con Streamlit.
+* Documentación del proyecto.
+
+---
+
+## 📁 Estructura del repositorio
+
+```text
 PI_Mineria_Datos_1/
 │
 ├── app/
@@ -27,10 +150,9 @@ PI_Mineria_Datos_1/
 ├── data/
 │   ├── raw/
 │   └── processed/
-│       └── dataset_final.csv
 │
 ├── logs/
-│       └── pipeline_log.csv
+│   └── pipeline_log.csv
 │
 ├── notebooks/
 │   ├── 01_RA_Inspeccion_Inicial.ipynb
@@ -43,31 +165,69 @@ PI_Mineria_Datos_1/
 │
 ├── README.md
 └── requirements.txt
+```
 
-Preparación y calidad de datos:
+---
 
-El proceso de limpieza fue fundamental para asegurar la integridad de la información. Se realizaron las siguientes acciones técnicas:Eliminación de valores nulos, tratamiento de valores atípicos y corrección de tipos de datos,normalización de variables clave para el modelado.
-La trazabilidad de estas transformaciones quedó documentada en el archivo de [logs](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/logs/pipeline_log.csv). La validación final se encuentra en el notebook [02_calidad_y_limpieza.ipynb](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/notebooks/02_calidad_y_limpieza.ipynb).
+## 💻 Ejecución local
 
-Resumen del análisis exploratorio:
+Para ejecutar el proyecto localmente:
 
-El análisis se centró en identificar correlaciones y distribuciones de las variables principales, detectando patrones de consumo mediante visualizaciones univariado, bivariadas y multivariado. Todos los detalles, incluyendo histogramas y diagramas de dispersión, se encuentran en el notebook [03_eda.ipynb](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/notebooks/03_eda.ipynb).
+### 1. Clonar el repositorio
 
-Reducción de dimensionalidad:
+```bash
+git clone https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1.git
+```
 
-Para mejorar la eficiencia y eliminar redundancias, se aplicó la técnica de PCA (Análisis de Componentes Principales) en el notebook [04_pca.ipynb](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/notebooks/04_pca.ipynb). Esto facilitó la interpretación visual de los grupos de usuarios manteniendo la varianza significativa.
+### 2. Ingresar al proyecto
 
-Visualización interactiva:
+```bash
+cd PI_Mineria_Datos_1
+```
 
-La aplicación web permite interactuar con los resultados procesados de forma intuitiva: [Enlace a la aplicación](https://pimineriadatos1-kjpk4kvynnmh4hmnjdqcis.streamlit.app/).
+### 3. Instalar las dependencias
 
+```bash
+pip install -r requirements.txt
+```
 
-Cómo ejecutar localmente:
+### 4. Ejecutar la aplicación
 
-1-Clonar este repositorio: git clone [https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1)
-2-Instalar dependencias: pip install -r [requirements.txt](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/requirements.txt)
-3-Ejecutar la app: streamlit run [app/Home.py](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/app/Home.py)
+```bash
+streamlit run app/Home.py
+```
 
-Conclusiones:
+---
 
-El proyecto permitió transformar datos brutos en información estratégica, optimizando la interpretación mediante técnicas de minería y reducción de dimensionalidad. Los resultados proporcionan una base sólida para el análisis del comportamiento de usuarios, cumpliendo con los objetivos propuestos. Todo se puede ver en [05_conclusiones.ipynb](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/notebooks/05_conclusiones.ipynb)
+## 📓 Notebooks
+
+El proyecto se encuentra organizado en diferentes notebooks que representan las principales etapas del análisis:
+
+| Notebook                         | Etapa                        |
+| -------------------------------- | ---------------------------- |
+| `01_RA_Inspeccion_Inicial.ipynb` | Inspección inicial           |
+| `02_RA_Calidad_y_Limpieza.ipynb` | Calidad y limpieza           |
+| `03_RA_EDA.ipynb`                | Análisis exploratorio        |
+| `04_RA_PCA.ipynb`                | Reducción de dimensionalidad |
+| `05_RA_Conclusiones.ipynb`       | Conclusiones                 |
+
+---
+
+## 📌 Conclusiones
+
+El proyecto permitió aplicar diferentes técnicas de minería de datos para transformar un dataset inicialmente desordenado en información procesada y analizable.
+
+A través de las etapas de limpieza, análisis exploratorio y reducción de dimensionalidad mediante PCA, fue posible estudiar diferentes características del comportamiento de los usuarios y representar los resultados mediante visualizaciones.
+
+Finalmente, la aplicación desarrollada con Streamlit permite presentar los resultados de una manera interactiva y accesible.
+
+📓 **Notebook de conclusiones:**
+[`05_RA_Conclusiones.ipynb`](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/notebooks/05_RA_Conclusiones.ipynb)
+
+---
+
+## 👤 Autor
+
+**Santiago Bustamante**
+
+Proyecto desarrollado individualmente como parte de la formación en **Ciencia de Datos e Inteligencia Artificial**.
