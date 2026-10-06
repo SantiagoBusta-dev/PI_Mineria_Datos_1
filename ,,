@@ -1,0 +1,492 @@
+# 📊 Proyecto Integrador — Minería de Datos I
+
+**Instituto Tecnológico de Santiago del Estero (ITSE)**  
+**Carrera:** Técnico Superior en Ciencia de Datos e Inteligencia Artificial  
+**Materia:** Minería de Datos I  
+**Turno:** Mañana  
+**Entrega:** Julio 2026  
+
+### 👥 Integrantes
+
+- **Iris Pineda Macarena**
+- **Santiago Verón**
+
+---
+
+## 📌 Descripción del proyecto
+
+Este proyecto corresponde al **Trabajo Práctico Integrador de la materia Minería de Datos I** y tiene como objetivo desarrollar un pipeline completo de **Ciencia de Datos**, aplicado al análisis y auditoría de usuarios de una plataforma de streaming.
+
+El proyecto parte de un conjunto de datos en estado crudo que presenta diferentes problemas de calidad, entre ellos:
+
+- Valores nulos.
+- Registros duplicados.
+- Inconsistencias en categorías.
+- Valores lógicamente imposibles.
+- Valores atípicos (*outliers*).
+- Variables con información redundante.
+
+A partir de estos datos se construye un flujo de procesamiento reproducible que comprende las etapas de:
+
+**Inspección → Calidad y limpieza → Análisis exploratorio (EDA) → Reducción dimensional (PCA) → Visualización → Conclusiones**
+
+Todo el proceso se encuentra documentado mediante notebooks de Jupyter y se complementa con una **aplicación web interactiva desarrollada con Streamlit**, que permite visualizar los principales resultados del análisis.
+
+### 🌐 Aplicación desplegada
+
+[🚀 Acceder a la aplicación en Streamlit](https://yzbu2kwpecop22hhwf4nd7.streamlit.app/)
+
+### 💻 Repositorio
+
+[📁 Ver repositorio en GitHub](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1)
+
+---
+
+# 🎯 Objetivos
+
+## Objetivo general
+
+Diseñar, implementar y desplegar un **pipeline reproducible de procesamiento y análisis de datos** que permita transformar un dataset crudo de usuarios de una plataforma de streaming en información útil para el análisis y la toma de decisiones.
+
+## Objetivos específicos
+
+- Inspeccionar la estructura y calidad inicial del dataset.
+- Detectar valores nulos, duplicados, inconsistencias y datos inválidos.
+- Aplicar técnicas de limpieza y transformación de datos.
+- Tratar los valores atípicos mediante métodos estadísticos robustos.
+- Aplicar estrategias de imputación de valores faltantes.
+- Realizar un análisis exploratorio de los datos (EDA).
+- Identificar relaciones y posibles redundancias entre variables.
+- Seleccionar variables numéricas relevantes para la reducción dimensional.
+- Estandarizar los datos antes de aplicar PCA.
+- Aplicar **Análisis de Componentes Principales (PCA)**.
+- Analizar la varianza explicada por los componentes principales.
+- Generar una representación bidimensional de los usuarios.
+- Registrar las transformaciones realizadas mediante logs.
+- Desplegar los resultados mediante una aplicación web interactiva.
+- Mantener un flujo de trabajo reproducible y documentado.
+
+---
+
+# 🗂️ Dataset
+
+El proyecto utiliza como fuente de datos el archivo:
+
+[📄 `streaming_users.json`](https://github.com/SantiagoVeron-HLW/PI_Mineria_De_Datos_I/tree/main/data/raw)
+
+Este dataset contiene información relacionada con usuarios de una plataforma de streaming, incluyendo variables de carácter:
+
+- Demográfico.
+- Identificatorio.
+- Uso de la plataforma.
+- Transaccional.
+- Tipo de suscripción.
+- Métricas de actividad.
+
+El archivo original se encuentra dentro de:
+
+```text
+data/raw/
+```
+
+Luego del proceso de limpieza y transformación se genera el dataset procesado:
+
+[📄 `streaming_users_clean.csv`](https://github.com/SantiagoVeron-HLW/PI_Mineria_Datos_1/tree/main/data/processed)
+
+ubicado en:
+
+```text
+data/processed/
+```
+
+---
+
+# 🔄 Pipeline de procesamiento
+
+El proyecto sigue un flujo de procesamiento organizado en diferentes etapas:
+
+```text
+                  ┌─────────────────────┐
+                  │   Dataset crudo     │
+                  │ streaming_users.json│
+                  └──────────┬──────────┘
+                             │
+                             ▼
+                  ┌─────────────────────┐
+                  │ Inspección inicial  │
+                  │ Estructura y tipos  │
+                  └──────────┬──────────┘
+                             │
+                             ▼
+                  ┌─────────────────────┐
+                  │ Calidad y limpieza  │
+                  │ Nulos / duplicados  │
+                  │ inconsistencias     │
+                  │ outliers            │
+                  └──────────┬──────────┘
+                             │
+                             ▼
+                  ┌─────────────────────┐
+                  │ Dataset procesado   │
+                  │ .csv                │
+                  └──────────┬──────────┘
+                             │
+                             ▼
+                  ┌─────────────────────┐
+                  │        EDA          │
+                  │ Análisis univariado │
+                  │ y bivariado         │
+                  └──────────┬──────────┘
+                             │
+                             ▼
+                  ┌─────────────────────┐
+                  │       PCA           │
+                  │ Estandarización     │
+                  │ Componentes          │
+                  │ principales         │
+                  └──────────┬──────────┘
+                             │
+                             ▼
+                  ┌─────────────────────┐
+                  │ Visualización web   │
+                  │     Streamlit       │
+                  └─────────────────────┘
+```
+
+---
+
+# 🧹 Preparación y calidad de los datos
+
+La etapa de preparación tiene como finalidad garantizar que los datos utilizados en las etapas posteriores sean consistentes y adecuados para el análisis.
+
+Se aplicaron las siguientes técnicas:
+
+### 🔹 Eliminación de duplicados
+
+Se identificaron y eliminaron registros duplicados utilizando el identificador correspondiente de cada usuario.
+
+### 🔹 Homogeneización de categorías
+
+Se normalizaron valores categóricos para evitar que distintas representaciones de una misma categoría fueran interpretadas como valores diferentes.
+
+### 🔹 Corrección de valores inválidos
+
+Se detectaron y corrigieron valores que no resultaban lógicamente posibles dentro del contexto de las variables analizadas.
+
+### 🔹 Tratamiento de valores atípicos
+
+Se aplicó **winsorización robusta basada en el rango intercuartílico (IQR)** sobre variables específicas, principalmente relacionadas con:
+
+- Minutos de uso.
+- Cantidad de tickets.
+
+El objetivo fue reducir la influencia de valores extremos sin eliminar innecesariamente observaciones.
+
+### 🔹 Tratamiento de valores nulos
+
+La imputación de valores faltantes se realizó de manera diferenciada según las características y el mecanismo de ausencia de cada variable.
+
+---
+
+# 🔎 Análisis Exploratorio de Datos — EDA
+
+Una vez finalizada la etapa de limpieza, se realizó un **Análisis Exploratorio de Datos (EDA)** para comprender el comportamiento de las variables y detectar relaciones relevantes.
+
+El análisis incluye:
+
+### 📊 Análisis univariado
+
+Se utilizaron gráficos de distribución y frecuencia para estudiar individualmente las variables del dataset.
+
+Entre las visualizaciones utilizadas se encuentran:
+
+- Histogramas.
+- Distribuciones.
+- Frecuencias.
+- Análisis de variables numéricas y categóricas.
+
+### 📈 Análisis bivariado
+
+Se analizaron relaciones entre diferentes variables para identificar posibles patrones y comportamientos asociados entre los usuarios.
+
+### 🔗 Análisis multivariado
+
+Se construyeron matrices de correlación para estudiar la relación entre las variables numéricas e identificar posibles redundancias.
+
+Los resultados obtenidos durante esta etapa sirvieron como base para la selección de variables utilizadas posteriormente en PCA.
+
+---
+
+# 🧮 Reducción de dimensionalidad — PCA
+
+Para reducir la dimensionalidad del conjunto de datos se implementó **PCA (Principal Component Analysis / Análisis de Componentes Principales)**.
+
+El procedimiento se desarrolló en las siguientes etapas:
+
+1. Selección de variables numéricas relevantes.
+2. Análisis de correlaciones.
+3. Estandarización de las variables.
+4. Aplicación del algoritmo PCA.
+5. Cálculo de la varianza explicada.
+6. Selección de los componentes principales.
+7. Generación de una representación bidimensional de los usuarios.
+
+El objetivo de esta técnica es transformar las variables originales en un nuevo conjunto de componentes ortogonales, reduciendo la redundancia y conservando la mayor cantidad posible de información.
+
+La representación obtenida permite analizar los usuarios en un espacio de menor dimensionalidad y deja preparado el dataset para futuros procesos de segmentación o clustering.
+
+---
+
+# 🌐 Aplicación web interactiva
+
+Los resultados del pipeline se presentan mediante una aplicación desarrollada con **Streamlit**.
+
+La aplicación permite navegar por las diferentes etapas del proyecto sin necesidad de ejecutar manualmente cada notebook.
+
+## 🏠 Home
+
+Presenta:
+
+- Información general del proyecto.
+- Integrantes.
+- Contexto del análisis.
+- Descripción del pipeline.
+- Acceso al repositorio de GitHub.
+
+## 📋 Dataset
+
+Permite visualizar información relacionada con:
+
+- Calidad de los datos.
+- Transformaciones realizadas.
+- Resultados del proceso de limpieza.
+- Logs generados durante el pipeline.
+
+## 📊 EDA
+
+Presenta las principales visualizaciones del análisis exploratorio, incluyendo gráficos interactivos y selectores para facilitar el análisis de las variables.
+
+## 🧮 PCA
+
+Permite visualizar:
+
+- Varianza explicada.
+- Componentes principales.
+- Proyección bidimensional de los usuarios.
+- Distribución de las observaciones en el nuevo espacio reducido.
+
+## 📝 Conclusiones
+
+Resume los principales resultados obtenidos durante el proceso de análisis y las posibles líneas de trabajo futuro.
+
+---
+
+# 📁 Estructura del repositorio
+
+```text
+PI_Mineria_Datos_1/
+│
+├── README.md
+├── requirements.txt
+│
+├── data/
+│   ├── raw/
+│   │   └── streaming_users.json
+│   │
+│   └── processed/
+│       └── streaming_users_clean.csv
+│
+├── notebooks/
+│   ├── 01_inspeccion_inicial.ipynb
+│   ├── 02_calidad_y_limpieza.ipynb
+│   ├── 03_eda.ipynb
+│   ├── 04_pca.ipynb
+│   └── 05_conclusiones.ipynb
+│
+├── app/
+│   ├── Home.py
+│   │
+│   └── pages/
+│       ├── 01_Dataset.py
+│       ├── 02_EDA.py
+│       ├── 03_PCA.py
+│       └── 04_Conclusiones.py
+│
+├── reports/
+│   └── informe_final.pdf
+│
+└── logs/
+    └── pipeline_log.csv
+```
+
+---
+
+# 📓 Notebooks
+
+Los notebooks representan las diferentes etapas del pipeline:
+
+| Notebook | Descripción |
+|---|---|
+| `01_inspeccion_inicial.ipynb` | Inspección de estructura, tipos de datos y calidad inicial |
+| `02_calidad_y_limpieza.ipynb` | Tratamiento de nulos, duplicados, inconsistencias y outliers |
+| `03_eda.ipynb` | Análisis exploratorio y visualización de los datos |
+| `04_pca.ipynb` | Estandarización, aplicación y análisis de PCA |
+| `05_conclusiones.ipynb` | Síntesis de resultados y conclusiones finales |
+
+---
+
+# 🛠️ Tecnologías utilizadas
+
+El proyecto fue desarrollado utilizando principalmente:
+
+- **Python**
+- **Jupyter Notebook**
+- **Pandas** — manipulación y análisis de datos.
+- **NumPy** — operaciones numéricas.
+- **Matplotlib** — visualización de datos.
+- **Seaborn** — visualización estadística.
+- **Scikit-learn** — estandarización y PCA.
+- **Streamlit** — desarrollo de la aplicación web.
+- **Git / GitHub** — control de versiones y almacenamiento del proyecto.
+
+Las dependencias necesarias se encuentran especificadas en:
+
+```text
+requirements.txt
+```
+
+---
+
+# 🚀 Cómo ejecutar el proyecto localmente
+
+## 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1.git
+```
+
+Ingresar al directorio:
+
+```bash
+cd PI_Mineria_Datos_1
+```
+
+## 2. Crear un entorno virtual
+
+### Windows
+
+```bash
+python -m venv venv
+```
+
+Activar el entorno:
+
+```bash
+venv\Scripts\activate
+```
+
+### Linux / macOS
+
+```bash
+python3 -m venv venv
+```
+
+Activar el entorno:
+
+```bash
+source venv/bin/activate
+```
+
+## 3. Instalar las dependencias
+
+```bash
+pip install -r requirements.txt
+```
+
+## 4. Ejecutar la aplicación
+
+Desde la carpeta principal del proyecto:
+
+```bash
+streamlit run app/Home.py
+```
+
+La aplicación se abrirá en el navegador y permitirá navegar por las diferentes etapas del análisis.
+
+---
+
+# 📑 Informe final
+
+El informe completo del proyecto se encuentra disponible en:
+
+[📄 `informe_final.pdf`](https://github.com/SantiagoBusta-dev/PI_Mineria_Datos_1/blob/main/reports/informe_final.pdf)
+
+En él se documentan con mayor profundidad las decisiones metodológicas, los resultados obtenidos y las conclusiones del trabajo.
+
+---
+
+# 📋 Registro y trazabilidad
+
+El proyecto incorpora un archivo de logs:
+
+```text
+logs/pipeline_log.csv
+```
+
+Este archivo permite registrar información relacionada con las transformaciones realizadas durante el pipeline, favoreciendo la **trazabilidad, auditoría y reproducibilidad** del procesamiento.
+
+---
+
+# 📊 Resultados principales
+
+Como resultado del procesamiento se logró:
+
+- Estructurar un pipeline reproducible de procesamiento de datos.
+- Detectar y corregir diferentes problemas de calidad.
+- Reducir el impacto de valores atípicos mediante técnicas robustas.
+- Tratar los valores faltantes de acuerdo con las características de cada variable.
+- Generar un dataset procesado listo para el análisis.
+- Identificar relaciones y redundancias entre variables.
+- Reducir la dimensionalidad mediante PCA.
+- Obtener una representación bidimensional de los usuarios.
+- Integrar el análisis en una aplicación web interactiva.
+- Incorporar registros de ejecución para mejorar la trazabilidad del proceso.
+
+---
+
+# 🧾 Conclusiones
+
+El proyecto permitió implementar de manera integral las principales etapas de un proceso de **Minería de Datos**, comenzando desde un conjunto de datos crudos hasta la obtención de una representación transformada y visualmente interpretable.
+
+El tratamiento de calidad permitió corregir diferentes inconsistencias presentes en los datos y conservar aproximadamente el **98,4 % de la estructura original**, evitando una pérdida innecesaria de información.
+
+La aplicación de PCA permitió transformar las variables seleccionadas en un espacio de componentes ortogonales, reduciendo la redundancia existente entre las variables originales y facilitando una representación de menor dimensionalidad.
+
+Además, la incorporación de una aplicación desarrollada con Streamlit permitió convertir los resultados técnicos del análisis en una herramienta interactiva, facilitando la exploración y comunicación de los resultados.
+
+Finalmente, se identificó como posible línea de trabajo futuro la incorporación de **nuevas variables cualitativas y contextuales**, que permitirían ampliar el análisis y obtener una caracterización más completa de los usuarios.
+
+---
+
+# 🔮 Trabajo futuro
+
+Como posibles extensiones del proyecto se plantea:
+
+- Incorporar nuevas variables cualitativas.
+- Ampliar el análisis de comportamiento de los usuarios.
+- Implementar técnicas de clustering sobre los componentes obtenidos mediante PCA.
+- Comparar diferentes métodos de reducción dimensional.
+- Incorporar nuevos indicadores de negocio.
+- Mejorar la automatización del pipeline.
+- Ampliar los mecanismos de monitoreo y registro.
+- Incorporar nuevos dashboards y visualizaciones interactivas.
+
+---
+
+## 👨‍💻 Autores
+
+**Iris Pineda Macarena**  
+**Santiago Verón**
+
+**Instituto Tecnológico de Santiago del Estero — ITSE**  
+**Minería de Datos I — 2026**
